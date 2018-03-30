@@ -4,7 +4,7 @@ const Video = require('../models/videos.js');
 
 // Index
 videos.get('/',  (req,res) => {
-	res.send('index');
+	res.json(videos);
 });
 
 
