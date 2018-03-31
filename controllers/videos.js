@@ -24,11 +24,11 @@ router.delete("/:id", (req, res)=>{
 });
 
 //Edit
-// router.put("/:id", (req, res) => {
-//     Videos.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedVideo)=>{
-//         res.json(updatedVideo);
-//     })
-// })
+router.put("/:id", (req, res) => {
+    Videos.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedVideo)=>{
+        res.json(updatedVideo);
+    })
+})
 
 
 module.exports = router;

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="MainController as ctrl">
-        {{2+2}}
+        <!-- {{2+2}} -->
 
         <!-- Header -->
         <div class="header">
@@ -35,10 +35,24 @@
                 <p>{{video.description}}</p>
                 <p>{{video.category}}</p>
 
+                <!-- Edit Video -->
+                <div class="editForm">
+                    <a href="#" ng-click="(ctrl.indexOfEditFormToShow === $index) ? ctrl.indexOfEditFormToShow = null : ctrl.indexOfEditFormToShow = $index">Edit This Video</a><br>
+                  <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editVideo(video)">
+                      <input type="text" ng-model="ctrl.updatedTitle" placeholder="Title"/>
+                      <input type="text" ng-model="ctrl.updatedURL" placeholder="http://"/>
+                      <input type="text" ng-model="ctrl.updatedDescription" placeholder="description"/>
+                      <input type="text" ng-model="ctrl.updatedCategory" placeholder="category"/>
+                      <input type="submit" id="submitEdit" value="Submit Edits"/>
+                  </form>
+                </div>
+
                 <button ng-click="ctrl.deleteVideo(video._id)">Delete this Video</button>
 
             </ul>
         </div>
+
+
 
 
     </body>

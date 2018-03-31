@@ -32,6 +32,7 @@ app.controller("MainController", ["$http", function($http){
             console.error(error);
         }).catch(err =>console.error('Catch: ', err))
     };
+    this.getVideos();
 
     // Delete
     this.deleteVideo = (id) => {
@@ -49,23 +50,25 @@ app.controller("MainController", ["$http", function($http){
     }
 
     // Edit
-    // this.editVideo = () => {
-    //     $http({
-    //         method:'PUT',
-    //         url: '/videos/' + video._id
-    //         data: {
-    //             title: this.updatedTitle,
-    //             category: this.updatedCategory,
-    //             description: this.updatedDescription,
-    //             url: this.updatedUrl
-    //         }
-    //     }).then(response => {
-    //         console.log(response.data.updated);
-    //     }, error => {
-    //         console.log(error);
-    //     }).catch(err => console.log('Catch', error))
-    // }
+    this.editVideo = (video) => {
+
+        $http({
+            method:'PUT',
+            url: '/videos/' + video._id,
+            data: {
+                title: this.updatedTitle,
+                category: this.updatedCategory,
+                description: this.updatedDescription,
+                url: this.updatedURL
+            }
+        }).then(response => {
+            this.getVideos();
+        }, error => {
+            console.error(error);
+        }).catch(err => console.log('Catch', error))
+    }
+
 
     // load on page load
-    this.getVideos();
+
 }]);
