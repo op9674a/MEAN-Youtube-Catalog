@@ -34,12 +34,15 @@ app.controller("MainController", ["$http", function($http){
     };
 
     // Delete
-    this.deleteVideo = () => {
+    this.deleteVideo = (id) => {
         $http({
             method:'DELETE',
-            url:'/videos/' + video._id
+            url:'/videos/' + id
         }).then(response => {
             console.log(response.data); // add getVideos() to repopulate the index
+            const removeByIndex = this.videos.findIndex(video =>
+            video._id === id);
+            this.videos.splice(removeByIndex, 1);
         }, error => {
             console.error(error);
         }).catch(err => console.error('Catch: ', err))
