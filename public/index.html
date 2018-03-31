@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="MainController as ctrl">
+        {{2+2}}
 
         <!-- Header -->
         <div class="header">
@@ -18,11 +19,25 @@
         <form ng-submit="ctrl.createVideo()">
             <h2>Add a new video</h2>
             Title: <input type="text" ng-model="ctrl.createForm.title" placeholder="Video title" />
-            Category: <input type="text" ng-model="ctrl.category" placeholder="Category" />
-            Description: <input type="text" ng-model="ctrl.description" placeholder="Description" />
-            URL: <input type="text" ng-model="ctrl.url" placeholder="http://" />
+            Category: <input type="text" ng-model="ctrl.createForm.category" placeholder="Category" />
+            Description: <input type="text" ng-model="ctrl.createForm.description" placeholder="Description" />
+            URL: <input type="text" ng-model="ctrl.createForm.url" placeholder="http://" />
             <button type="submit">Submit</button>
         </form>
+
+        <!-- Videos Index -->
+        <h2>Your Videos</h2>
+        <div ng-repeat="video in ctrl.videos" class="list">
+            <ul>
+
+                <p><a href="{{video.url}}">{{video.title}}</a></p>
+
+                <p>{{video.description}}</p>
+                <p>{{video.category}}</p>
+
+            </ul>
+        </div>
+
 
     </body>
 </html>

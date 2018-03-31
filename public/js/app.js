@@ -3,22 +3,19 @@ const app = angular.module("VideosApp", []);
 app.controller("MainController", ["$http", function($http){
     // this.h1 = "Video Catalog";
 
-    this.videos = [];
+
     this.createForm = {};
+    this.video = "";
 
     // Create
     this.createVideo = () => {
         $http({
             method:'POST',
             url: '/videos',
-            data: {
-                title: this.title,
-                category: this.category,
-                description: this.description,
-                url: this.url
-            }
+            data: this.createForm
         }).then(response => {
-            console.log(response.data);
+            this.videos.push(response.data);
+            this.createForm = {};
         }, error => {
             console.error(error);
         }).catch(err => console.error('Catch: ', err));
@@ -37,16 +34,16 @@ app.controller("MainController", ["$http", function($http){
     };
 
     // Delete
-    // this.deleteVideo = () => {
-    //     $http({
-    //         method:'DELETE',
-    //         url:'/videos/' + video._id
-    //     }).then(response => {
-    //         console.log(response.data); // add getVideos() to repopulate the index
-    //     }, error => {
-    //         console.error(error);
-    //     }).catch(err => console.error('Catch: ', err))
-    // }
+    this.deleteVideo = () => {
+        $http({
+            method:'DELETE',
+            url:'/videos/' + video._id
+        }).then(response => {
+            console.log(response.data); // add getVideos() to repopulate the index
+        }, error => {
+            console.error(error);
+        }).catch(err => console.error('Catch: ', err))
+    }
 
     // Edit
     // this.editVideo = () => {

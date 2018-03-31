@@ -16,12 +16,12 @@ router.post('/', (req, res)=>{
     });
 });
 
-//Delete
-// router.delete("/:id", (req, res)=>{
-//     Videos.findByIdAndRemove(req.params.id, (err, deletedVideo) => {
-//         res.json(deletedAnimal)
-//     });
-// });
+// Delete
+router.delete("/:id", (req, res)=>{
+    Videos.findByIdAndRemove(req.params.id, (err, deletedVideo) => {
+        res.json(deletedVideo)
+    });
+});
 
 //Edit
 // router.put("/:id", (req, res) => {
