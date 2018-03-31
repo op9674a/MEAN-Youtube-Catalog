@@ -15,9 +15,9 @@
         </div>
 
         <!-- Create Video -->
-        <form class="form" ng-submit="ctrl.createVideo()">
+        <form ng-submit="ctrl.createVideo()">
             <h2>Add a new video</h2>
-            Title: <input type="text" ng-model="ctrl.title" placeholder="Video title" />
+            Title: <input type="text" ng-model="ctrl.createForm.title" placeholder="Video title" />
             Category: <input type="text" ng-model="ctrl.category" placeholder="Category" />
             Description: <input type="text" ng-model="ctrl.description" placeholder="Description" />
             URL: <input type="text" ng-model="ctrl.url" placeholder="http://" />

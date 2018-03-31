@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Video = require('../models/videos.js');
+const Videos = require('../models/videos.js');
 
 // Index
 router.get('/',  (req,res) => {
-	res.json(videos);
+	Videos.find({}, (err, foundVideos)=>{
+		res.json(foundVideos);
+	});
 });
 
-//Create
-// router.post("/", (req, res)=>{
-//     Videos.create(req.body, (err, createdVideo)=> {
-//         res.json(createdVideo);
-//     });
-// });
+// Create
+router.post('/', (req, res)=>{
+    Videos.create(req.body, (err, createdVideo)=> {
+        res.json(createdVideo);
+    });
+});
 
 //Delete
 // router.delete("/:id", (req, res)=>{

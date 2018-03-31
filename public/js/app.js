@@ -6,18 +6,6 @@ app.controller("MainController", ["$http", function($http){
     this.videos = [];
     this.createForm = {};
 
-    // Get
-    this.getVideos = () => {
-        $http({
-            method:'GET',
-            url: '/videos'
-        }).then(response => {
-            this.videos = response.data;
-        }, error => {
-            console.error(error);
-        }).catch(err =>console.error('Catch: ', err))
-    };
-
     // Create
     this.createVideo = () => {
         $http({
@@ -35,6 +23,18 @@ app.controller("MainController", ["$http", function($http){
             console.error(error);
         }).catch(err => console.error('Catch: ', err));
     }
+
+    // Get
+    this.getVideos = () => {
+        $http({
+            method:'GET',
+            url: '/videos'
+        }).then(response => {
+            this.videos = response.data;
+        },error => {
+            console.error(error);
+        }).catch(err =>console.error('Catch: ', err))
+    };
 
     // Delete
     // this.deleteVideo = () => {
