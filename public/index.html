@@ -2,13 +2,27 @@
 <html lang="en" dir="ltr" ng-app="VideosApp">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Videos</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="MainController as ctrl">
-        {{2+2}}
-        <h1>{{ctrl.h1}}</h1>
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Video Catalog</h1>
+        </div>
+
+        <!-- Create Video -->
+        <form class="form" ng-submit="ctrl.createVideo()">
+            <h2>Add a new video</h2>
+            Title: <input type="text" ng-model="ctrl.title" placeholder="Video title" />
+            Category: <input type="text" ng-model="ctrl.category" placeholder="Category" />
+            Description: <input type="text" ng-model="ctrl.description" placeholder="Description" />
+            URL: <input type="text" ng-model="ctrl.url" placeholder="http://" />
+            <button type="submit">Submit</button>
+        </form>
+
     </body>
 </html>
