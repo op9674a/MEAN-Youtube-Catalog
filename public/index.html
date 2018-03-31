@@ -22,6 +22,7 @@
             Category: <input type="text" ng-model="ctrl.createForm.category" placeholder="Category" />
             Description: <input type="text" ng-model="ctrl.createForm.description" placeholder="Description" />
             URL: <input type="text" ng-model="ctrl.createForm.url" placeholder="http://" />
+            Thumbnail: <input type="text" ng-model="ctrl.createForm.thumb" placeholder="thumbnail image link"/>
             <button type="submit">Submit</button>
         </form>
 
@@ -34,6 +35,10 @@
 
                 <p>{{video.description}}</p>
                 <p>{{video.category}}</p>
+                <div class="thumbnail" ng-model="ctrl.thumb">
+                <img src="{{video.thumb}}" alt="image">
+                </div>
+
 
                 <!-- Edit Video -->
                 <div class="editForm">
@@ -43,6 +48,7 @@
                       <input type="text" ng-model="ctrl.updatedURL" placeholder="http://"/>
                       <input type="text" ng-model="ctrl.updatedDescription" placeholder="description"/>
                       <input type="text" ng-model="ctrl.updatedCategory" placeholder="category"/>
+                      <input type="text" ng-model="ctrl.updatedThumb" placeholder="thumbnail image link"/>
                       <input type="submit" id="submitEdit" value="Submit Edits"/>
                   </form>
                 </div>

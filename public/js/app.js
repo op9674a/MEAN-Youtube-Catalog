@@ -21,6 +21,13 @@ app.controller("MainController", ["$http", function($http){
         }).catch(err => console.error('Catch: ', err));
     }
 
+    // this.filter = () => {
+    //     $http({
+    //         method:"POST",
+    //         url:"/videos",
+    //         data:
+    //     })
+    // }
     // Get
     this.getVideos = () => {
         $http({
@@ -59,7 +66,8 @@ app.controller("MainController", ["$http", function($http){
                 title: this.updatedTitle,
                 category: this.updatedCategory,
                 description: this.updatedDescription,
-                url: this.updatedURL
+                url: this.updatedURL,
+                thumb: this.updatedThumb
             }
         }).then(response => {
             this.getVideos();
