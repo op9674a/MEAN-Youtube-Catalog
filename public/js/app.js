@@ -21,14 +21,6 @@ app.controller("MainController", ["$http", function($http){
         }).catch(err => console.error('Catch: ', err));
     }
 
-    // this.filter = () => {
-    //     $http({
-    //         method:"POST",
-    //         url:"/videos",
-    //         data:
-    //     })
-    // }
-    // Get
     this.getVideos = () => {
         $http({
             method:'GET',
