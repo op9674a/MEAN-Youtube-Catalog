@@ -49,6 +49,7 @@ ul {
 }
 
 .side-nav{
+    margin: 0px;
     height: 100%;
     /* position: fixed; */
     width: 12%;
@@ -67,6 +68,7 @@ ul {
     flex-wrap: wrap;
     width: 90%;
     margin: 0;
+    border-left: 150px solid #c9b8b0;
 }
 
 .card{
