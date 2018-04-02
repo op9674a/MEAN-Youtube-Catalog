@@ -1,3 +1,3 @@
 # MEAN-Youtube-Catalog
 ## Victor Jaquez / Olena Penn
-## Hello World
+## Save your favorite Youtube videos to this video catalog. 
