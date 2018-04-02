@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/op9674a/MEAN-Youtube-Catalog#readme",
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "express": "^4.16.3",
     "mongoose": "^5.0.12"
   }
