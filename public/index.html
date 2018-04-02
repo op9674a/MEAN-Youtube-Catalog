@@ -20,40 +20,73 @@
                 <nav class="navbar-right">
                     <ul class="topnav-right">
                     <li>
-                        <input type="text" placeholder="Search . . .">
+                        <input type="text" ng-model="searchBox" placeholder="Search . . .">
                     </li>
                     <li>
                         <button type="submit" class="btn">Add</button>
                     </li>
-
                 </ul>
             </nav>
+
             </div>
 
+
+                <!-- <div class="side-nav">
+                        <h2>My List</h2>
+                        <ul>
+                            <li>
+                                <a href="#">Videos</a>
+                            </li>
+                        </ul>
+                </div> -->
+
+
         <!-- Create Video -->
+        <div class=".flex-container">
+            <div class="side-nav">
+                    <h2>My List</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Videos</a>
+                        </li>
+                    </ul>
+            </div>
+
         <div class="card">
+
             <form ng-submit="ctrl.createVideo()">
                 <h2>Add a new video</h2>
 
                 Title: <input type="text" ng-model="ctrl.createForm.title" placeholder="Video title" />
                 Category: <input type="text" ng-model="ctrl.createForm.category" placeholder="Category" />
-                Description: <input type="text" ng-model="ctrl.createForm.description" placeholder="Description" />
+                Description: <input type="text" ng-model="ctrl.createForm.description" placeholder="Description"/>
                 URL: <input type="text" ng-model="ctrl.createForm.url" placeholder="http://" />
+                Thumbnail: <input type="text" ng-model="ctrl.createForm.thumb" placeholder="thumbnail image link"/>
                 <button type="submit">Submit</button>
 
             </form>
         </div>
 
+
+
+
         <!-- Videos Index -->
         <div class="card">
-        <h2>Your Videos</h2>
-        <div ng-repeat="video in ctrl.videos" class="list">
+            <h2>Your Videos</h2>
+        </div>
+
+        <div class="card">
+
+        <div class="list" ng-repeat="video in ctrl.videos | filter: searchBox" >
             <ul>
 
                 <p><a href="{{video.url}}">{{video.title}}</a></p>
 
                 <p>{{video.description}}</p>
                 <p>{{video.category}}</p>
+                <div class="thumbnail" ng-model="ctrl.thumb">
+               <img id="thumbimg" src="{{video.thumb}}" alt="image">
+               </div>
 
                 <!-- Edit Video -->
                 <div class="editForm">
@@ -63,6 +96,7 @@
                       <input type="text" ng-model="ctrl.updatedURL" placeholder="http://"/>
                       <input type="text" ng-model="ctrl.updatedDescription" placeholder="description"/>
                       <input type="text" ng-model="ctrl.updatedCategory" placeholder="category"/>
+                      <input type="text" ng-model="ctrl.updatedThumb" placeholder="thumbnail image link"/>
                       <input type="submit" id="submitEdit" value="Submit Edits"/>
                   </form>
                 </div>
@@ -72,6 +106,8 @@
             </ul>
         </div>
         </div>
+
+            </div>
 
 
 
