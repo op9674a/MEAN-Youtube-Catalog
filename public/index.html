@@ -20,7 +20,7 @@
                 <nav class="navbar-right">
                     <ul class="topnav-right">
                     <li>
-                        <input type="text" placeholder="Search . . .">
+                        <input type="text" ng-model="searchBox" placeholder="Search . . .">
                     </li>
                     <li>
                         <button type="submit" class="btn">Add</button>
@@ -77,7 +77,7 @@
 
         <div class="card">
 
-        <div ng-repeat="video in ctrl.videos" class="list">
+        <div class="list" ng-repeat="video in ctrl.videos | filter: searchBox" >
             <ul>
 
                 <p><a href="{{video.url}}">{{video.title}}</a></p>

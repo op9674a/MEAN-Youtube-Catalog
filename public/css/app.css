@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
     background-color: #eceae2;
     justify-content: center;
-    /* height: 100%; */
+    height: 100%;
 }
 
 img {
@@ -49,17 +49,17 @@ ul {
 }
 
 .side-nav{
-    margin: 0px;
-    height: 100%;
-    /* position: fixed; */
-    width: 12%;
-    text-indent: 20px;
-    display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: column;
-    position: absolute;
-    border-right: 5px solid #c9b8b0;
-    background-color: #eceae2;
+   margin: 0px;
+   height: 100%;
+   /* position: fixed; */
+   width: 12%;
+   text-indent: 20px;
+   display: flex;
+   /* flex-wrap: wrap; */
+   flex-direction: column;
+   position: absolute;
+   border-right: 5px solid #c9b8b0;
+   background-color: #eceae2;
 
 }
 
@@ -68,7 +68,6 @@ ul {
     flex-wrap: wrap;
     width: 90%;
     margin: 0;
-    border-left: 150px solid #c9b8b0;
 }
 
 .card{
@@ -79,7 +78,6 @@ ul {
     flex-wrap: wrap;
     flex-direction: row;
     margin-left: 0;
-    /* padding-left: 0; */
 }
 
 .list.ng-scope{
